@@ -1,5 +1,5 @@
 from carvekit.web.schemas.config import MLConfig
-from carvekit.web.predict import init_interface
+from carvekit.api.high import Interface
 from PIL import Image
 import torch
 
@@ -12,7 +12,8 @@ config = MLConfig(
 )
 
 # Инициализация модели
-interface = init_interface(config)
+interface = Interface(config)
+
 
 # Загрузка и обработка изображения
 input_image = Image.open("input.jpg")
